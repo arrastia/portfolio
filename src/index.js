@@ -2,11 +2,16 @@ import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 
 import { App } from './App';
+
+import { ThemesProvider } from 'views/.tools/Providers/ThemesProvider';
+
 import { reportWebVitals } from './reportWebVitals';
 
 ReactDOM.render(
   <StrictMode>
-    <App />
+    <ThemesProvider>
+      <App />
+    </ThemesProvider>
   </StrictMode>,
   document.getElementById('root')
 );
