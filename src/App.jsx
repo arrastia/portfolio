@@ -1,29 +1,37 @@
 import { Fragment, useContext } from 'react';
 
-import './App.css';
 import { GlobalStyle } from 'GlobalStyles';
 
 import { ThemeContext } from 'styled-components';
 
-import logo from 'assets/img/logo.svg';
+import { Styles } from './App.styles';
 
-import { Button } from 'views/.components/Button';
+import { UserColumn } from 'views/.components/UserColumn';
+
+import { Home } from 'views/Home';
 
 export const App = () => {
   const { theme } = useContext(ThemeContext);
 
+  const renderContent = (view = 'HOME') => {
+    switch (view) {
+      case 'HOME':
+        return <Home />;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <Fragment>
       <GlobalStyle theme={theme} />
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <a className="App-link" href="https://instagram.com/pablo.arrastia" target="_blank" rel="noopener noreferrer">
-            Pablo Arrastia
-          </a>
-          <Button label={'test'} />
-        </header>
-      </div>
+      <main>
+        <Styles.Glass>
+          <UserColumn />
+          <div style={{ flex: 2 }}>{renderContent()}</div>
+        </Styles.Glass>
+      </main>
     </Fragment>
   );
 };
