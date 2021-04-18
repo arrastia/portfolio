@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 import { Styles } from './Button.styles';
 
-export const Button = ({ className, disabled, icon, label, onClick, onDoubleClick, style }) => {
+export const Button = ({ children, className, disabled, icon, label, onClick, onDoubleClick, style }) => {
   const renderIcon = () => (icon ? <Styles.Icon>{icon}</Styles.Icon> : <Fragment />);
   const renderLabel = () => (label ? <Styles.Text>{label}</Styles.Text> : <Fragment />);
 
@@ -10,6 +10,7 @@ export const Button = ({ className, disabled, icon, label, onClick, onDoubleClic
     <Styles.Button className={className} disabled={disabled} onClick={onClick} onDoubleClick={onDoubleClick} style={style}>
       {renderIcon()}
       {renderLabel()}
+      {children}
     </Styles.Button>
   );
 };
