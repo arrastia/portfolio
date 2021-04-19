@@ -9,7 +9,7 @@ import { themeReducer } from 'views/.tools/Reducers/themeReducer';
 import { useLocalStorage } from 'views/.tools/Hooks/useLocalStorage';
 
 export const ThemesProvider = ({ children }) => {
-  const [themeStorageState, setThemeStorageState] = useLocalStorage('theme', 'bubblesTheme');
+  const [themeStorageState, setThemeStorageState] = useLocalStorage('theme', 'iOSTheme');
   const [themeState, themeDispatch] = useReducer(themeReducer, themeStorageState);
 
   const onChangeTheme = theme => {

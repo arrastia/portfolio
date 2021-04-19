@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 
   :root { 
     --bg: ${({ theme }) => (theme.background ? theme.background : '#f9fafb')};
+    --background-image: ${({ theme }) => (theme.backgroundImage ? theme.backgroundImage : null)};
     --black: #000000;
     --first-color: ${({ theme }) => theme.firstColor};
     --random-color: #61dafb;
@@ -27,6 +28,10 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background: var(--bg);
+    background-image: var(--background-image);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
@@ -41,7 +46,7 @@ export const GlobalStyle = createGlobalStyle`
 
   main {
     align-items: center;
-    background: linear-gradient(to right top, var(--first-color), var(--second-color));
+    /* background: linear-gradient(to right top, var(--first-color), var(--second-color)); */
     display: flex;
     justify-content: center;
     min-height: 100vh;

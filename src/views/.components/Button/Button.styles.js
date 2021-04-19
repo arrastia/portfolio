@@ -107,7 +107,6 @@ const Button = styled('button')`
     opacity: 0.6;
     overflow: visible;
     padding: 0;
-    position: relative;
     text-transform: none;
     transform: scale(0.8);
     transition: opacity 0.3s ease;
